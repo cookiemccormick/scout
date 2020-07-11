@@ -4,8 +4,7 @@ const Model = (props) => {
   let model = props.models[props.match.params.id -1];
 
   return (
-    <li>
-      {model ? model.name : null} -
+    <h2>{model ? model.name : null}
       {model ? model.picture : null} -
       {model ? model.height : null} -
       {model ? model.bust : null} -
@@ -14,7 +13,7 @@ const Model = (props) => {
       {model ? model.shoe : null} -
       {model ? model.eyes : null} -
       {model ? model.hair : null}
-    </li>
+    </h2>
   );
 }
 
