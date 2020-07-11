@@ -18,7 +18,7 @@ const Model = (props) => {
         {model ? model.eyes : null} -
         {model ? model.hair : null}
       </h3>
-      <BookingsContainer />
+      <BookingsContainer model={model}/>
     </div>
   );
 }
