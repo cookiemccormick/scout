@@ -12,7 +12,7 @@ class ModelsContainer extends React.Component {
   render() {
     return (
       <div>
-        <ModelInput />
+        <ModelInput /><br/><br/>
         <Models models={this.props.models} />
       </div>
     );
