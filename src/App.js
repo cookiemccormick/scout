@@ -1,22 +1,15 @@
 import React from 'react';
-import './App.css';
+import { connect } from 'react-redux';
+import ModelsContainer from './containers/ModelsContainer';
 
 class App extends React.Component {
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/models', {
-      method: 'GET'
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-  }
-
   render() {
     return (
       <div className="App">
-        App
+        <ModelsContainer />
       </div>
     );
   }
 }
 
-export default App;
+export default connect()(App);
