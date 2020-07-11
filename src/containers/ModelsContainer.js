@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Models from '../components/Models';
 import ModelInput from '../components/ModelInput';
 
@@ -13,4 +14,4 @@ class ModelsContainer extends React.Component {
   }
 }
 
-export default ModelsContainer;
+export default connect()(ModelsContainer);
