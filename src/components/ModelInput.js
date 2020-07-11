@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {addModel} from '../actions/addModel';
+import { addModel } from '../actions/addModel';
 
 class ModelInput extends React.Component {
   state = {
@@ -24,16 +24,27 @@ class ModelInput extends React.Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.props.addModel(this.state);
+    this.setState({
+      name: '',
+      picture: '',
+      height: '',
+      bust: '',
+      waist: '',
+      hip: '',
+      shoe: '',
+      eyes: '',
+      hair: ''
+    })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit}>
+        <form onSubmit={this.handleOnSubmit} action='/action_page.php'>
           <label>Model Name: </label>
           <input type='text'placeholder='name' value={this.state.name} onChange={this.handleOnChange} name='name'/><br/>
           <label>Select Image: </label>
-          <input type='file' placeholder='picture' value={this.state.picture} onChange={this.handleOnChange} name='picture'/><br/>
+          <input type='file' placeholder='picture' value={this.state.picture} onChange={this.handleOnChange} name='picture' accept='image/*'/><br/>
           <label>Height: </label>
           <input type='number' placeholder='height in inches' value={this.state.height} onChange={this.handleOnChange} name='height'/><br/>
           <label>Bust: </label>
@@ -55,4 +66,4 @@ class ModelInput extends React.Component {
   }
 }
 
-export default connect(null, {addModel})(ModelInput);
+export default connect(null, { addModel })(ModelInput);
