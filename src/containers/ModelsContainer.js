@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { fetchModels } from '../actions/fetchModels';
 import Models from '../components/Models';
 import Model from '../components/Model';
@@ -14,9 +14,11 @@ class ModelsContainer extends React.Component {
   render() {
     return (
       <div>
-        <Route path='/models/new' component={ModelInput} />
-        <Route path='/models/:id' render={(routerProps) => <Model {...routerProps} models={this.props.models} />} />
-        <Route exact path='/models' render={(routerProps) => <Models {...routerProps} models={this.props.models} />} />
+        <Switch>
+          <Route path='/models/new' component={ModelInput} />
+          <Route path='/models/:id' render={(routerProps) => <Model {...routerProps} models={this.props.models} />} />
+          <Route path='/models' render={(routerProps) => <Models {...routerProps} models={this.props.models} />} />
+      </Switch>
       </div>
     );
   }
