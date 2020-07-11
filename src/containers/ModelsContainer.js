@@ -14,4 +14,10 @@ class ModelsContainer extends React.Component {
   }
 }
 
-export default connect()(ModelsContainer);
+const mapStateToProps = state => {
+  return (
+    models: state.models
+  );
+}
+
+export default connect(mapStateToProps)(ModelsContainer);
