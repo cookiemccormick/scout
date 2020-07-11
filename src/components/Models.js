@@ -6,7 +6,7 @@ const Models = (props) => {
       {props.models.map(model =>
         <li key={model.id}>
           {model.name} -
-          {model.pictures} -
+          {model.picture} -
           {model.height} -
           {model.bust} -
           {model.waist} -
