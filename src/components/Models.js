@@ -1,20 +1,11 @@
 import React from 'react';
+import Model from './Model';
 
 const Models = (props) => {
   return (
     <div>
       {props.models.map(model =>
-        <li key={model.id}>
-          {model.name} -
-          {model.picture} -
-          {model.height} -
-          {model.bust} -
-          {model.waist} -
-          {model.hip} -
-          {model.shoe} -
-          {model.eyes} -
-          {model.hair}
-        </li>)}
+        <div key={model.id}><Model model={model}/></div>)}
     </div>
   );
 }
