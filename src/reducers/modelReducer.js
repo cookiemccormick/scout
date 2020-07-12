@@ -22,6 +22,15 @@ export default function manageModels(state = {models: []}, action) {
         }
       })
       return {...state, models: modelsTwo};
+    case 'EDIT_MODEL':
+      let modelsThree = state.models.map(model => {
+        if (model.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return model;
+        }
+      })
+      return {...state, models: modelsThree};
     default:
       return state;
   }

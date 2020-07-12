@@ -1,6 +1,7 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import BookingsContainer from '../containers/BookingsContainer';
+import ModelEdit from './ModelEdit';
 
 const Model = (props) => {
   // let model = props.models[props.match.params.id -1];
@@ -20,6 +21,7 @@ const Model = (props) => {
         {model ? model.hair : null}
       </h3>
       <BookingsContainer model={model}/>
+      <ModelEdit model={model} />
     </div>
   );
 }
