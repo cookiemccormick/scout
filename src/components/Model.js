@@ -3,7 +3,8 @@ import { Redirect } from 'react-router-dom';
 import BookingsContainer from '../containers/BookingsContainer';
 
 const Model = (props) => {
-  let model = props.models[props.match.params.id -1];
+  // let model = props.models[props.match.params.id -1];
+  let model = props.models.filter(model => model.id == props.match.params.id)[0];
 
   return (
     <div>
