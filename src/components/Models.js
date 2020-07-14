@@ -5,36 +5,37 @@ import Model from './Model';
 const Models = (props) => {
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Picture</th>
-            <th>Height</th>
-            <th>Bust</th>
-            <th>Waist</th>
-            <th>Hip</th>
-            <th>Shoe</th>
-            <th>Eyes</th>
-            <th>Hair</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.models.map(model =>
-            <tr key={model.id}>
-              <td><Link to={`/models/${model.id}`}>{model.name}</Link></td>
-              <td>{model.picture}</td>
-              <td>{model.height}</td>
-              <td>{model.bust}</td>
-              <td>{model.waist}</td>
-              <td>{model.hip}</td>
-              <td>{model.shoe}</td>
-              <td>{model.eyes}</td>
-              <td>{model.hair}</td>
+      <h2>Models</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Picture</th>
+              <th>Height</th>
+              <th>Bust</th>
+              <th>Waist</th>
+              <th>Hip</th>
+              <th>Shoe</th>
+              <th>Eyes</th>
+              <th>Hair</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {props.models.map(model =>
+              <tr key={model.id}>
+                <td><Link to={`/models/${model.id}`}>{model.name}</Link></td>
+                <td>{model.picture}</td>
+                <td>{model.height}</td>
+                <td>{model.bust}</td>
+                <td>{model.waist}</td>
+                <td>{model.hip}</td>
+                <td>{model.shoe}</td>
+                <td>{model.eyes}</td>
+                <td>{model.hair}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
     </div>
   );
 }
