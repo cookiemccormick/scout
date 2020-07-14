@@ -9,16 +9,19 @@ const Bookings = (props) => {
 
   return (
     <div>
-      {props.bookings && props.bookings.map(booking =>
-        <li key={booking.id}>
-          {booking.job} -
-          {booking.amount} -
-          {booking.start_time} -
-          {booking.end_time} -
-          {booking.description}
-          <button onClick={() => handleOnClick(booking)}>Delete</button>
-        </li>
-      )}
+      <h3>Bookings</h3>
+        <ul>
+          {props.bookings && props.bookings.map(booking =>
+            <li key={booking.id}>
+            {booking.job} -
+            {booking.amount} -
+            {booking.start_time} -
+            {booking.end_time} -
+            {booking.description}
+            <button onClick={() => handleOnClick(booking)}>Delete</button>
+          </li>
+        )}
+      </ul>
     </div>
   );
 }
