@@ -10,8 +10,8 @@ const Model = (props) => {
   return (
     <div>
       <h2>{model ? model.name : null}</h2>
-      <h3>
-        {model ? model.picture : null} -
+      <h4>
+        {model ? <img src={model.picture} /> : null} -
         {model ? model.height : null} -
         {model ? model.bust : null} -
         {model ? model.waist : null} -
@@ -19,7 +19,7 @@ const Model = (props) => {
         {model ? model.shoe : null} -
         {model ? model.eyes : null} -
         {model ? model.hair : null}
-      </h3>
+      </h4>
       <BookingsContainer model={model} />
       {model ? <ModelEdit model={model} /> : null}
     </div>

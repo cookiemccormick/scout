@@ -23,24 +23,16 @@ class ModelInput extends React.Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.addModel(this.state);
-    this.setState({
-      name: '',
-      picture: '',
-      height: '',
-      bust: '',
-      waist: '',
-      hip: '',
-      shoe: '',
-      eyes: '',
-      hair: ''
-    })
+
+    const formData = new FormData(event.target);
+
+    this.props.addModel(formData, this.state);
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit} action='/action_page.php'>
+        <form onSubmit={this.handleOnSubmit} encType="multipart/form-data">
           <label>Model Name: </label>
           <input type='text'placeholder='name' value={this.state.name} onChange={this.handleChange} name='name'/><br/>
           <label>Select Image: </label>

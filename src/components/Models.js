@@ -24,7 +24,7 @@ const Models = (props) => {
             {props.models.map(model =>
               <tr key={model.id}>
                 <td><Link to={`/models/${model.id}`}>{model.name}</Link></td>
-                <td>{model.picture}</td>
+                <td>{model.picture ? <img src={model.picture} /> : null}</td>
                 <td>{model.height}</td>
                 <td>{model.bust}</td>
                 <td>{model.waist}</td>

@@ -23,26 +23,16 @@ class ModelEdit extends React.Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    let model = {...this.state, id: this.props.model.id}
-    this.props.editModel(model);
-    this.setState({
-      name: '',
-      picture: '',
-      height: '',
-      bust: '',
-      waist: '',
-      hip: '',
-      shoe: '',
-      eyes: '',
-      hair: ''
-    })
+    let model = {...this.state, id: this.props.model.id};
+    const formData = new FormData(event.target);
+
+    this.props.editModel(formData, model);
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit} action='/action_page.php'>
+        <form onSubmit={this.handleOnSubmit} encType="multipart/form-data">
           <label>Model Name: </label>
           <input type='text' placeholder='name' value={this.state.name} onChange={this.handleChange} name='name'/><br/>
           <label>Select Image: </label>

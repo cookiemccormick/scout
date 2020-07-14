@@ -1,12 +1,11 @@
-export const editModel = (data) => {
+export const editModel = (formData, data) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/models/${data.id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: formData
     })
     .then(response => response.json())
     .then(model => dispatch({
