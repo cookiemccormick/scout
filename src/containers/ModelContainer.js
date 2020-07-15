@@ -12,12 +12,16 @@ class ModelContainer extends React.Component {
   render() {
     const model = this.props.model;
 
+    if (!model) {
+      return null;
+    }
+
     return (
       <div>
-        <h2>{model ? model.name : null} </h2>
-        {model ? <img src={model.picture} alt={model.name}/> : null}
+        <h2>{model.name} </h2>
+        <img src={model.picture} alt={model.name}/>
         <h3>Update Model:</h3>
-        {model ? <ModelEdit model={model} /> : null}
+        <ModelEdit model={model} />
         <BookingsContainer model={model} />
       </div>
     );

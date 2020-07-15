@@ -5,34 +5,13 @@ export default function manageModels(state = {models: []}, action) {
     case 'FETCH_MODEL':
       return {model: action.payload};
     case 'ADD_MODEL':
-      return {...state, models: [...state.models, action.payload]}
+      return {model: action.payload};
     case 'ADD_BOOKING':
-      let models = state.models.map(model => {
-        if (model.id === action.payload.id) {
-          return action.payload;
-        } else {
-          return model;
-        }
-      })
-      return {...state, models: models};
+      return {model: action.payload};
     case 'DELETE_BOOKING':
-      let modelsTwo = state.models.map(model => {
-        if (model.id === action.payload.id) {
-          return action.payload;
-        } else {
-          return model;
-        }
-      })
-      return {...state, models: modelsTwo};
+      return {model: action.payload};
     case 'EDIT_MODEL':
-      let modelsThree = state.models.map(model => {
-        if (model.id === action.payload.id) {
-          return action.payload;
-        } else {
-          return model;
-        }
-      })
-      return {...state, models: modelsThree};
+      return {model: action.payload};
     default:
       return state;
   }
