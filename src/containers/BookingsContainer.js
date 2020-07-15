@@ -4,12 +4,19 @@ import BookingInput from '../components/BookingInput';
 import Bookings from '../components/Bookings';
 
 class BookingsContainer extends React.Component {
+  state = {
+    showForm: false
+  }
+
+  handleClick = (event) => {
+    this.setState({showForm: true});
+  }
+
   render() {
     return (
       <div>
         <Bookings bookings={this.props.model && this.props.model.bookings} />
-        <h3>Add Booking</h3>
-        <BookingInput model={this.props.model} />
+        {this.state.showForm ? <BookingInput model={this.props.model}/> : <button onClick={this.handleClick}>Add Booking</button>}
       </div>
     );
   }

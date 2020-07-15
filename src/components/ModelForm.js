@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ModelForm extends React.Component {
+class ModelForm extends React.Component {
   state = {
     name: this.props.model.name,
     picture: '',
@@ -56,3 +56,5 @@ export default class ModelForm extends React.Component {
     );
   }
 }
+
+export default ModelForm;
