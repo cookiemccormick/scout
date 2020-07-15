@@ -4,15 +4,15 @@ import { editModel } from '../actions/editModel';
 
 class ModelEdit extends React.Component {
   state = {
-    name: this.props.model.name,
+    name: this.props.model.name || '',
     picture: '',
-    height: this.props.model.height,
-    bust: this.props.model.bust,
-    waist: this.props.model.waist,
-    hip: this.props.model.hip,
-    shoe: this.props.model.shoe,
-    eyes: this.props.model.eyes,
-    hair: this.props.model.hair
+    height: this.props.model.height || '',
+    bust: this.props.model.bust || '',
+    waist: this.props.model.waist || '',
+    hip: this.props.model.hip || '',
+    shoe: this.props.model.shoe || '',
+    eyes: this.props.model.eyes || '',
+    hair: this.props.model.hair || ''
   };
 
   handleChange = (event) => {
