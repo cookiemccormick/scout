@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { deleteBooking } from '../actions/deleteBooking';
 
 const Bookings = (props) => {
-  const handleOnClick = (booking) => {
+  const handleDelete = (booking) => {
     props.deleteBooking(booking.id, booking.model_id)
   }
 
   return (
     <div>
-      <h3>Bookings</h3>
+      <h2>Bookings</h2>
         <ul>
           {props.bookings && props.bookings.map(booking =>
             <li key={booking.id}>
@@ -18,7 +18,7 @@ const Bookings = (props) => {
             {booking.start_time} -
             {booking.end_time} -
             {booking.description}
-            <button onClick={() => handleOnClick(booking)}>Delete</button>
+            <button onClick={() => handleDelete(booking)}>Delete</button>
           </li>
         )}
       </ul>
