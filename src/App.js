@@ -1,8 +1,7 @@
 import React from 'react';
-import AppContainer from './containers/AppContainer';
 import ModelInput from './components/ModelInput';
 import ModelContainer from './containers/ModelContainer';
-import Models from './components/Models';
+import ModelsContainer from './containers/ModelsContainer';
 import Home from './components/Home';
 import { Route, Switch } from 'react-router-dom';
 
@@ -14,10 +13,9 @@ class App extends React.Component {
         <Switch>
           <Route path='/models/new' component={ModelInput} />
           <Route path='/models/:id' component={ModelContainer} />
-          <Route path='/models' component={Models} />
+          <Route path='/models' component={ModelsContainer} />
           <Route path='/' component={Home} />
         </Switch>
-        <AppContainer />
       </div>
     );
   }

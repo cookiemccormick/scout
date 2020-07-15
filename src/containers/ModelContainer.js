@@ -1,21 +1,16 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
 import BookingsContainer from './BookingsContainer';
 import ModelEdit from '../components/ModelEdit';
+import { connect } from 'react-redux';
+import { fetchModel } from '../actions/fetchModel';
 
 class ModelContainer extends React.Component {
-  state = {
-    model: null
-  };
-
   componentDidMount() {
-    fetch(`http://localhost:3000/api/v1/models/${this.props.match.params.id}.json`)
-      .then(response => response.json())
-      .then(json => this.setState({ model: json }))
+    this.props.fetchModel(this.props.match.params.id);
   }
 
   render() {
-    const model = this.state.model;
+    const model = this.props.model;
 
     return (
       <div>
@@ -29,4 +24,10 @@ class ModelContainer extends React.Component {
   }
 }
 
-export default ModelContainer;
+const mapStateToProps = state => {
+  return {
+    model: state.model
+  }
+}
+
+export default connect(mapStateToProps, { fetchModel })(ModelContainer);
