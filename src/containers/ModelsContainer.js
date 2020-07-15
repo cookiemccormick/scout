@@ -17,7 +17,7 @@ class ModelsContainer extends React.Component {
         <Switch>
           <Route path='/models/new' component={ModelInput} />
           <Route path='/models/:id' render={(routerProps) => <Model {...routerProps} models={this.props.models} />} />
-          <Route path='/models' render={(routerProps) => <Models {...routerProps} models={this.props.models} />} />
+          <Route exact path='/models' render={(routerProps) => <Models {...routerProps} models={this.props.models} />} />
       </Switch>
       </div>
     );
