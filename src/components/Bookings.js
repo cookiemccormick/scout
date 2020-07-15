@@ -9,7 +9,7 @@ const Bookings = (props) => {
 
   return (
     <div>
-      <h2>Bookings</h2>
+      <h2>Bookings: </h2>
         <ul>
           {props.bookings && props.bookings.map(booking =>
             <li key={booking.id}>
