@@ -10,7 +10,10 @@ class ModelInput extends React.Component {
 
   render() {
     return (
-      <ModelForm onSubmit={this.handleOnSubmit} model={{}} />
+      <div>
+        <h2>Create Model:</h2>
+        <ModelForm onSubmit={this.handleOnSubmit} model={{}} />
+      </div>
     );
   }
 }
