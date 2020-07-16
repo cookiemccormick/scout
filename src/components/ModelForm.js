@@ -1,5 +1,19 @@
 import React from 'react';
 
+const HEIGHTS = [
+  '5\'7"',
+  '5\'8"',
+  '5\'9"',
+  '5\'10"',
+  '5\'11"',
+  '6\'',
+  '6\'1"',
+  '6\'2"',
+  '6\'3"',
+  '6\'4"',
+  '6\'5"',
+];
+
 class ModelForm extends React.Component {
   state = {
     name: this.props.model.name,
@@ -37,7 +51,13 @@ class ModelForm extends React.Component {
           <label>Select Image: </label>
           <input type='file' placeholder='picture' value={this.state.picture} onChange={this.handleChange} name='picture' accept='image/*'/><br/>
           <label>Height: </label>
-          <input type='number' placeholder='height in inches' value={this.state.height} onChange={this.handleChange} name='height'/><br/>
+          <select value={this.state.height} onChange={this.handleChange} name='height'>
+            {HEIGHTS.map(value => {
+              return (
+                <option>{value}</option>
+              );
+            })}
+          </select><br/>
           <label>Bust: </label>
           <input type='number' placeholder='bust' value={this.state.bust} onChange={this.handleChange} name='bust'/><br/>
           <label>Waist: </label>
