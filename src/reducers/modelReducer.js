@@ -1,4 +1,4 @@
-export default function manageModels(state = {models: []}, action) {
+function manageModels(state = {models: []}, action) {
   switch (action.type) {
     case 'FETCH_MODELS':
       return {models: action.payload};
@@ -16,3 +16,5 @@ export default function manageModels(state = {models: []}, action) {
       return state;
   }
 }
+
+export default manageModels;
