@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchModels } from '../actions/fetchModels';
+import Table from 'react-bootstrap/Table';
 
 class ModelsContainer extends React.Component {
   componentDidMount() {
@@ -9,10 +10,16 @@ class ModelsContainer extends React.Component {
   }
 
   render() {
+    const models = this.props.models;
+
+    if (!models) {
+      return null;
+    }
+
     return (
       <div>
         <h2>Models</h2>
-          <table>
+          <Table>
             <thead>
               <tr>
                 <th>Name</th>
@@ -30,7 +37,7 @@ class ModelsContainer extends React.Component {
               {this.props.models.map(model =>
                 <tr key={model.id}>
                   <td><Link to={`/models/${model.id}`}>{model.name}</Link></td>
-                  <td>{model.picture ? <img src={model.picture} alt={model.name}/> : null}</td>
+                  <td>{model.picture ? <img src={model.picture} alt={model.name} className='model-picture'/> : null}</td>
                   <td>{model.height}</td>
                   <td>{model.bust}</td>
                   <td>{model.waist}</td>
@@ -41,7 +48,7 @@ class ModelsContainer extends React.Component {
                 </tr>
               )}
             </tbody>
-          </table>
+          </Table>
       </div>
     );
   }

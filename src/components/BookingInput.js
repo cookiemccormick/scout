@@ -5,7 +5,7 @@ import { addBooking } from '../actions/addBooking';
 class BookingInput extends React.Component {
   state = {
     job: '',
-    amount: '',
+    amount: '0.00',
     start_time: '',
     end_time: '',
     description: ''
