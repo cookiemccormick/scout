@@ -38,6 +38,7 @@ class BookingForm extends React.Component {
 
     if (booking.end_time < booking.start_time) {
       alert('must be after start time')
+      return;
     }
     this.props.onSubmit(booking);
   }
@@ -48,23 +49,23 @@ class BookingForm extends React.Component {
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group controlId="formJob">
             <Form.Label>Job:</Form.Label>
-            <Form.Control type="text" placeholder="Enter job" name="job" onChange={this.handleChange} value={this.state.job}/>
+            <Form.Control type="text" placeholder="Enter job" name="job" onChange={this.handleChange} value={this.state.job} required/>
           </Form.Group>
           <Form.Group controlId="formAmount">
             <Form.Label>Amount:</Form.Label>
-            <Form.Control type="number" placeholder="Enter amount" name="amount" onChange={this.handleChange} value={this.state.amount}/>
+            <Form.Control type="number" placeholder="Enter amount" name="amount" onChange={this.handleChange} value={this.state.amount} required/>
           </Form.Group>
           <Form.Group controlId="formStartTime">
             <Form.Label>Start Time:</Form.Label>
-            <Form.Control type="datetime-local" name="start_time" onChange={this.handleChange} value={this.state.start_time}/>
+            <Form.Control type="datetime-local" name="start_time" onChange={this.handleChange} value={this.state.start_time} required/>
           </Form.Group>
           <Form.Group controlId="formEndTime">
             <Form.Label>End Time:</Form.Label>
-            <Form.Control type="datetime-local" name="end_time" onChange={this.handleChange} value={this.state.end_time}/>
+            <Form.Control type="datetime-local" name="end_time" onChange={this.handleChange} value={this.state.end_time} required/>
           </Form.Group>
           <Form.Group controlId="formDescription">
             <Form.Label>Description:</Form.Label>
-            <Form.Control type="text" placeholder="description" name="description" onChange={this.handleChange} value={this.state.description}/>
+            <Form.Control type="text" placeholder="description" name="description" onChange={this.handleChange} value={this.state.description} required/>
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit

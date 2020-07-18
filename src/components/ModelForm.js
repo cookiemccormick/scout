@@ -50,7 +50,7 @@ class ModelForm extends React.Component {
         <Form onSubmit={this.handleOnSubmit} encType="multipart/form-data">
           <Form.Group controlId="formName">
             <Form.Label>Model Name:</Form.Label>
-            <Form.Control type="text" placeholder="Enter name" name="name" onChange={this.handleChange} value={this.state.name}/>
+            <Form.Control type="text" placeholder="Enter name" name="name" onChange={this.handleChange} value={this.state.name} required/>
           </Form.Group>
           <Form.Group controlId="formPicture">
             <Form.Label>Picture:</Form.Label>
@@ -68,23 +68,23 @@ class ModelForm extends React.Component {
           </Form.Group>
           <Form.Group controlId="formBust">
             <Form.Label>Bust:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Bust" name="bust" onChange={this.handleChange} value={this.state.bust}/>
+            <Form.Control type="number" placeholder="Enter Bust" name="bust" onChange={this.handleChange} value={this.state.bust} required/>
           </Form.Group>
           <Form.Group controlId="formWaist">
             <Form.Label>Waist:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Waist" name="waist" onChange={this.handleChange} value={this.state.waist}/>
+            <Form.Control type="number" placeholder="Enter Waist" name="waist" onChange={this.handleChange} value={this.state.waist} required/>
           </Form.Group>
           <Form.Group controlId="formHip">
             <Form.Label>Hip:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Hip" name="hip" onChange={this.handleChange} value={this.state.hip}/>
+            <Form.Control type="number" placeholder="Enter Hip" name="hip" onChange={this.handleChange} value={this.state.hip} required/>
           </Form.Group>
           <Form.Group controlId="formHip">
             <Form.Label>Shoe:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Shoe" name="shoe" onChange={this.handleChange} value={this.state.shoe}/>
+            <Form.Control type="number" placeholder="Enter Shoe" name="shoe" onChange={this.handleChange} value={this.state.shoe} required/>
           </Form.Group>
           <Form.Group controlId="formEyes">
             <Form.Label>Eyes:</Form.Label>
-            <Form.Control type="text" placeholder="Enter Eyes" name="eyes" onChange={this.handleChange} value={this.state.eyes}/>
+            <Form.Control type="text" placeholder="Enter Eyes" name="eyes" onChange={this.handleChange} value={this.state.eyes} required/>
           </Form.Group>
           <Form.Group controlId="formHair">
             <Form.Label>Hair:</Form.Label>
