@@ -19,7 +19,7 @@ class ModelContainer extends React.Component {
     return (
       <div>
         <h2>{model.name} </h2>
-        <img src={model.picture} alt={model.name} className='model-picture-large'/>
+        <img src={model.picture} alt={model.name} className='model-picture-large'/><br/><br/>
         <ModelEdit model={model} />
         <BookingsContainer model={model} />
       </div>

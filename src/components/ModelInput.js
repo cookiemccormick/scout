@@ -13,7 +13,7 @@ class ModelInput extends React.Component {
     if (this.props.model) return <Redirect to={`/models/${this.props.model.id}`}/>;
     return (
       <div>
-        <h2>Create Model:</h2>
+        <h4>Create Model:</h4>
         <ModelForm onSubmit={this.handleOnSubmit} model={{}} />
       </div>
     );

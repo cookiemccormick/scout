@@ -14,7 +14,7 @@ const Bookings = (props) => {
 
   return (
     <div>
-      <h2>Bookings: </h2>
+      <h4>Bookings: </h4>
         <Table>
           <thead>
             <tr>

@@ -11,7 +11,7 @@ class BookingEdit extends React.Component {
   render() {
     return (
       <div>
-        <h2>Edit Booking:</h2>
+        <h4>Update Booking:</h4>
         <BookingForm onSubmit={this.handleOnSubmit} booking={this.props.booking} />
       </div>
     );

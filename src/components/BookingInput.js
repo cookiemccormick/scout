@@ -10,7 +10,7 @@ class BookingInput extends React.Component {
   render() {
     return (
       <div>
-        <h2>Booking Model:</h2>
+        <h4>Add Booking:</h4>
         <BookingForm onSubmit={this.handleOnSubmit} booking={{}} />
       </div>
     );

@@ -11,7 +11,7 @@ class ModelEdit extends React.Component {
   render() {
     return (
       <div>
-        <h2>Edit Model:</h2>
+        <h4>Edit Model:</h4>
         <ModelForm onSubmit={this.handleOnSubmit} model={this.props.model} />
       </div>
     );
