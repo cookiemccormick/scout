@@ -12,6 +12,8 @@ function manageModels(state = {models: []}, action) {
       return {model: action.payload};
     case 'EDIT_MODEL':
       return {model: action.payload};
+    case 'EDIT_BOOKING':
+      return {model: action.payload};
     default:
       return state;
   }

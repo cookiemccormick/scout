@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import { deleteBooking } from '../actions/deleteBooking';
 import Table from 'react-bootstrap/Table';
 
-
 const Bookings = (props) => {
   const handleDelete = (booking) => {
-    props.deleteBooking(booking.id, booking.model_id)
+    props.deleteBooking(booking.id, booking.model_id);
+  }
+
+  const handleUpdate = (booking) => {
+    props.onUpdateBooking(booking);
   }
 
   return (
@@ -21,6 +24,7 @@ const Bookings = (props) => {
               <th>End Time</th>
               <th>Description</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +35,7 @@ const Bookings = (props) => {
                 <td>{new Date(booking.start_time).toLocaleString()}</td>
                 <td>{new Date(booking.end_time).toLocaleString()}</td>
                 <td>{booking.description}</td>
+                <td><button onClick={() => handleUpdate(booking)}>Update</button></td>
                 <td><button onClick={() => handleDelete(booking)}>Delete</button></td>
               </tr>
             )}

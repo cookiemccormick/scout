@@ -4,12 +4,27 @@ import Button from 'react-bootstrap/Button';
 
 class BookingForm extends React.Component {
   state = {
+    id: this.props.booking.id,
     job: this.props.booking.job || '',
     amount: this.props.booking.amount || '',
     start_time: this.props.booking.start_time || '',
     end_time: this.props.booking.end_time || '',
     description: this.props.booking.description || ''
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.id != nextProps.booking.id) {
+      console.log('booking', nextProps)
+      this.setState({
+        id: nextProps.booking.id,
+        job: nextProps.booking.job || '',
+        amount: nextProps.booking.amount || '',
+        start_time: new Date(nextProps.booking.start_time).toLocaleString() || '',
+        end_time: nextProps.booking.end_time || '',
+        description: nextProps.booking.description || ''
+      });
+    }
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -18,7 +33,6 @@ class BookingForm extends React.Component {
   }
 
   handleOnSubmit = (event) => {
-    console.log("hi")
     event.preventDefault();
     const booking = {...this.state, id: this.props.booking.id}
 
