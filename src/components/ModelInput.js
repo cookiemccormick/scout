@@ -11,7 +11,6 @@ class ModelInput extends React.Component {
 
   render() {
     if (this.props.model) return <Redirect to={`/models/${this.props.model.id}`}/>;
-    console.log(this.props)
     return (
       <div>
         <h2>Create Model:</h2>
