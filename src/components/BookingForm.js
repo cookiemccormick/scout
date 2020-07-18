@@ -13,7 +13,7 @@ class BookingForm extends React.Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.id != nextProps.booking.id) {
+    if (this.state.id !== nextProps.booking.id) {
       console.log('booking', nextProps)
       this.setState({
         id: nextProps.booking.id,
@@ -36,6 +36,9 @@ class BookingForm extends React.Component {
     event.preventDefault();
     const booking = {...this.state, id: this.props.booking.id}
 
+    if (booking.end_time < booking.start_time) {
+      alert('must be after start time')
+    }
     this.props.onSubmit(booking);
   }
 
