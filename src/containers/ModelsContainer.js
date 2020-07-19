@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchModels } from '../actions/fetchModels';
 import Table from 'react-bootstrap/Table';
+
+import { fetchModels } from '../actions/fetchModels';
 
 class ModelsContainer extends React.Component {
   componentDidMount() {
@@ -57,7 +58,7 @@ class ModelsContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     models: state.models
-  }
+  };
 }
 
 export default connect(mapStateToProps, { fetchModels })(ModelsContainer);

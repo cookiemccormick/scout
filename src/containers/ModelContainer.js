@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import BookingsContainer from './BookingsContainer';
 import ModelEdit from '../components/ModelEdit';
-import { connect } from 'react-redux';
 import { fetchModel } from '../actions/fetchModel';
 
 class ModelContainer extends React.Component {
@@ -30,7 +31,7 @@ class ModelContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     model: state.model
-  }
+  };
 }
 
 export default connect(mapStateToProps, { fetchModel })(ModelContainer);

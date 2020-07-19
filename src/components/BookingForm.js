@@ -14,12 +14,11 @@ class BookingForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.state.id !== nextProps.booking.id) {
-      console.log('booking', nextProps)
       this.setState({
         id: nextProps.booking.id,
         job: nextProps.booking.job || '',
         amount: nextProps.booking.amount || '',
-        start_time: new Date(nextProps.booking.start_time).toLocaleString() || '',
+        start_time: nextProps.booking.start_time || '',
         end_time: nextProps.booking.end_time || '',
         description: nextProps.booking.description || ''
       });
@@ -37,7 +36,7 @@ class BookingForm extends React.Component {
     const booking = {...this.state, id: this.props.booking.id}
 
     if (booking.end_time < booking.start_time) {
-      alert('must be after start time')
+      alert('end time must be after start time')
       return;
     }
     this.props.onSubmit(booking);

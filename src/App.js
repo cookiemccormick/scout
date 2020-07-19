@@ -1,12 +1,13 @@
 import React from 'react';
-import ModelInput from './components/ModelInput';
-import ModelContainer from './containers/ModelContainer';
-import ModelsContainer from './containers/ModelsContainer';
-import Home from './components/Home';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
+import Home from './components/Home';
+import ModelInput from './components/ModelInput';
+import ModelContainer from './containers/ModelContainer';
+import ModelsContainer from './containers/ModelsContainer';
 import './App.css';
 
 class App extends React.Component {

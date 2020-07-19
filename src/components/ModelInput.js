@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
 import { addModel } from '../actions/addModel';
 import ModelForm from './ModelForm';
-import { Redirect } from 'react-router-dom';
 
 class ModelInput extends React.Component {
   handleOnSubmit = (formData, model) => {
@@ -10,7 +11,11 @@ class ModelInput extends React.Component {
   }
 
   render() {
-    if (this.props.model) return <Redirect to={`/models/${this.props.model.id}`}/>;
+    //after model is created, redirect to model show page
+    if (this.props.model) {
+      return <Redirect to={`/models/${this.props.model.id}`}/>;
+    }
+
     return (
       <div>
         <h4>Create Model:</h4>
@@ -23,7 +28,7 @@ class ModelInput extends React.Component {
 const mapStateToProps = state => {
   return {
     model: state.model
-  }
+  };
 }
 
 export default connect(mapStateToProps, { addModel })(ModelInput);

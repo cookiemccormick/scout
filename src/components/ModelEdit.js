@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { editModel } from '../actions/editModel';
 import ModelForm from './ModelForm';
 

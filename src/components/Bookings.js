@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteBooking } from '../actions/deleteBooking';
 import Table from 'react-bootstrap/Table';
+
+import { deleteBooking } from '../actions/deleteBooking';
 
 const Bookings = (props) => {
   const handleDelete = (booking) => {
@@ -28,7 +29,7 @@ const Bookings = (props) => {
             </tr>
           </thead>
           <tbody>
-            {props.bookings && props.bookings.map(booking =>
+            {props.bookings.map(booking =>
               <tr key={booking.id}>
                 <td>{booking.job}</td>
                 <td>${booking.amount}</td>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { editBooking } from '../actions/editBooking';
 import BookingForm from './BookingForm';
 

@@ -13,7 +13,7 @@ const HEIGHTS = [
   '6\'2"',
   '6\'3"',
   '6\'4"',
-  '6\'5"',
+  '6\'5"'
 ];
 
 class ModelForm extends React.Component {
@@ -68,19 +68,19 @@ class ModelForm extends React.Component {
           </Form.Group>
           <Form.Group controlId="formBust">
             <Form.Label>Bust:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Bust" name="bust" onChange={this.handleChange} value={this.state.bust} required/>
+            <Form.Control type="number" placeholder="Enter Bust" name="bust" onChange={this.handleChange} value={this.state.bust} required min="20" max="50"/>
           </Form.Group>
           <Form.Group controlId="formWaist">
             <Form.Label>Waist:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Waist" name="waist" onChange={this.handleChange} value={this.state.waist} required/>
+            <Form.Control type="number" placeholder="Enter Waist" name="waist" onChange={this.handleChange} value={this.state.waist} required min="20" max="50"/>
           </Form.Group>
           <Form.Group controlId="formHip">
             <Form.Label>Hip:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Hip" name="hip" onChange={this.handleChange} value={this.state.hip} required/>
+            <Form.Control type="number" placeholder="Enter Hip" name="hip" onChange={this.handleChange} value={this.state.hip} required min="20" max="50"/>
           </Form.Group>
           <Form.Group controlId="formHip">
             <Form.Label>Shoe:</Form.Label>
-            <Form.Control type="number" placeholder="Enter Shoe" name="shoe" onChange={this.handleChange} value={this.state.shoe} required/>
+            <Form.Control type="number" placeholder="Enter Shoe" name="shoe" onChange={this.handleChange} value={this.state.shoe} required min="5" max="12"/>
           </Form.Group>
           <Form.Group controlId="formEyes">
             <Form.Label>Eyes:</Form.Label>
