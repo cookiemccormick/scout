@@ -1,0 +1,15 @@
+.content {
+  padding: 20px;
+}
+
+form {
+  max-width: 400px;
+}
+
+.model-picture {
+  max-width: 100px;
+}
+
+.model-picture-large {
+  max-width: 400px;
+}
