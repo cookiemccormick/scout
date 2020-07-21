@@ -30,6 +30,7 @@ class Api::V1::ModelsController < ApplicationController
   def destroy
     @model = Model.find(params[:id])
     @model.destroy
+    render json:  @model
   end
 
   private

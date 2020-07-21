@@ -14,6 +14,11 @@ function manageModels(state = {models: []}, action) {
       return {model: action.payload};
     case 'EDIT_BOOKING':
       return {model: action.payload};
+    case 'DELETE_MODEL':
+      return{
+        ...state,
+        models: state.models.filter(model => model.id !== action.payload.id)
+      };
     default:
       return state;
   }

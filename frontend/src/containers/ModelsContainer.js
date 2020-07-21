@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 
 import { fetchModels } from '../actions/fetchModels';
+import { deleteModel } from '../actions/deleteModel';
 
 class ModelsContainer extends React.Component {
   componentDidMount() {
@@ -12,6 +13,10 @@ class ModelsContainer extends React.Component {
 
   render() {
     const models = this.props.models;
+
+    const handleDelete = (model) => {
+      this.props.deleteModel(model.id);
+    }
 
     if (!models) {
       return null;
@@ -32,6 +37,7 @@ class ModelsContainer extends React.Component {
                 <th>Shoe</th>
                 <th>Eyes</th>
                 <th>Hair</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -46,6 +52,7 @@ class ModelsContainer extends React.Component {
                   <td>{model.shoe}</td>
                   <td>{model.eyes}</td>
                   <td>{model.hair}</td>
+                  <td><button onClick={() => handleDelete(model)}>Delete</button></td>
                 </tr>
               )}
             </tbody>
@@ -56,9 +63,10 @@ class ModelsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     models: state.models
   };
 }
 
-export default connect(mapStateToProps, { fetchModels })(ModelsContainer);
+export default connect(mapStateToProps, { fetchModels, deleteModel })(ModelsContainer);
