@@ -9,18 +9,18 @@ class BookingForm extends React.Component {
     amount: this.props.booking.amount || '',
     start_time: this.props.booking.start_time || '',
     end_time: this.props.booking.end_time || '',
-    description: this.props.booking.description || ''
+    description: this.props.booking.description || '',
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (this.state.id !== nextProps.booking.id) {
+  componentDidUpdate(prevProps) {
+    if (this.props.booking.id !== prevProps.booking.id) {
       this.setState({
-        id: nextProps.booking.id,
-        job: nextProps.booking.job || '',
-        amount: nextProps.booking.amount || '',
-        start_time: nextProps.booking.start_time || '',
-        end_time: nextProps.booking.end_time || '',
-        description: nextProps.booking.description || ''
+        id: this.props.booking.id,
+        job: this.props.booking.job || '',
+        amount: this.props.booking.amount || '',
+        start_time: this.props.booking.start_time || '',
+        end_time: this.props.booking.end_time || '',
+        description: this.props.booking.description || ''
       });
     }
   }
@@ -40,6 +40,14 @@ class BookingForm extends React.Component {
       return;
     }
     this.props.onSubmit(booking);
+    this.setState({
+      id: '',
+      job: '',
+      amount: '',
+      start_time: '',
+      end_time: '',
+      description: ''
+    });
   }
 
   render() {
