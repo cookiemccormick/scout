@@ -4,6 +4,7 @@ function manageModels(state = {models: []}, action) {
       return {models: action.payload};
     case 'FETCH_MODEL':
       return {model: action.payload};
+    //add model to state
     case 'ADD_MODEL':
       return {model: action.payload};
     case 'ADD_BOOKING':

@@ -17,6 +17,7 @@ const HEIGHTS = [
 ];
 
 class ModelForm extends React.Component {
+  //default state values from the props
   state = {
     name: this.props.model.name || '',
     picture: '',
@@ -29,6 +30,7 @@ class ModelForm extends React.Component {
     hair: this.props.model.hair || ''
   };
 
+  //dynamically handles the change events on the form fields
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
@@ -39,6 +41,7 @@ class ModelForm extends React.Component {
     event.preventDefault();
 
     const model = {...this.state, id: this.props.model.id};
+    //used FormData to handle mulitpart file upload - image of model
     const formData = new FormData(event.target);
 
     this.props.onSubmit(formData, model);

@@ -29,6 +29,7 @@ class ModelContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+  //mapping the data from the store to the props
   return {
     model: state.model
   };

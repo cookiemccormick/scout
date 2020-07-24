@@ -1,4 +1,5 @@
-export const addModel = (formData, data) => {
+export const addModel = (formData) => {
+  //make api call to create the model and dispatch action with the newly created model
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/models', {
       method: 'POST',

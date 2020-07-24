@@ -39,6 +39,7 @@ class BookingForm extends React.Component {
       alert('end time must be after start time')
       return;
     }
+
     this.props.onSubmit(booking);
     this.setState({
       id: '',

@@ -25,6 +25,7 @@ class ModelInput extends React.Component {
   }
 }
 
+//map the application state/reducer
 const mapStateToProps = state => {
   return {
     model: state.model

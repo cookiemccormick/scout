@@ -7,34 +7,37 @@ import BookingEdit from '../components/BookingEdit';
 
 class BookingsContainer extends React.Component {
   state = {
-    currentBooking: null
+    editingBooking: null
   }
 
-  handleClick = (event) => {
-    this.setState({currentBooking: {}});
+  handleNewBooking = (event) => {
+    this.setState({editingBooking: {}});
   }
 
   handleUpdateBooking = (booking) => {
-    this.setState({currentBooking: booking});
+    this.setState({editingBooking: booking});
   }
 
   render() {
     return (
       <div>
-        <Bookings onUpdateBooking={this.handleUpdateBooking} bookings={this.props.model && this.props.model.bookings} />
+        <Bookings onUpdateBooking={this.handleUpdateBooking} bookings={this.props.model.bookings} />
         {this.renderBookingForm()}
       </div>
     );
   }
 
   renderBookingForm() {
-    if (!this.state.currentBooking) {
-      return <button onClick={this.handleClick}>Add Booking</button>;
+    //if there is no booking, add booking button is shown
+    if (!this.state.editingBooking) {
+      return <button onClick={this.handleNewBooking}>Add Booking</button>;
     }
-    if (!this.state.currentBooking.id) {
-      return <BookingInput booking={this.state.currentBooking} model={this.props.model} />;
+    //if the booking has no id, show add form
+    if (!this.state.editingBooking.id) {
+      return <BookingInput booking={this.state.editingBooking} model={this.props.model} />;
     }
-    return <BookingEdit booking={this.state.currentBooking} model={this.props.model}/>;
+    //update form
+    return <BookingEdit booking={this.state.editingBooking} model={this.props.model}/>;
   }
 }
 
