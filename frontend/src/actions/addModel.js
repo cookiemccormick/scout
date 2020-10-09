@@ -10,6 +10,7 @@ export const addModel = (formData) => {
     })
     .then(response => response.json())
     .then(model => dispatch({
+      //telling the store to add model
       type: 'ADD_MODEL',
       payload: model
     }))
